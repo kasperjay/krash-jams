@@ -118,6 +118,24 @@
       }
     };
 
+/*
+  @function SongPlayer.next
+  @desc skips the track to the next song on the album. if there isn't a next song, the playing stops.
+*/
+    SongPlayer.next = function() {
+      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+      currentSongIndex++;
+
+      if (currentSongIndex < currentAlbum.length) {
+        currentBuzzObject.stop();
+        SongPlayer.currentSong.playing = null;
+      } else {
+        var song = currentAlbum.songs[currentSongIndex];
+        setSong(song);
+        playSong(song);
+      }
+    };
+
     return SongPlayer;
   }
 
