@@ -1,6 +1,19 @@
 (function() {
-  function SongPlayer() {
+  function SongPlayer(Fixtures) {
     var SongPlayer = {};
+
+
+//  @desc stores album information to be accessed by the SongPlayer service
+    var currentAlbum = Fixtures.getAlbum();
+
+/*
+  @function getSongIndex
+  @desc returns index of song from currentAlbum
+  @param {Object} song
+*/
+    var getSongIndex = function(song) {
+    return currentAlbum.songs.indexOf(song);
+};
 
     SongPlayer.currentSong = null;
     var currentBuzzObject = null;
@@ -87,10 +100,28 @@
       song.playing = false;
     };
 
+/*
+  @function Songplayer.previous
+  @desc skips the track to the previous song in the album. if pressed while playing the first song (i.e. there is no previous track) the song stops playing.
+*/
+    SongPlayer.previous = function() {
+      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+      currentSongIndex--;
+
+      if (currentSongIndex < 0) {
+        currentBuzzObject.stop();
+        SongPlayer.currentSong.playing = null;
+      } else {
+        var song = currentAlbum.songs[currentSongIndex];
+        setSong(song);
+        playSong(song);
+      }
+    };
+
     return SongPlayer;
   }
 
      angular
          .module('blocJams')
-         .factory('SongPlayer', SongPlayer);
+         .factory('SongPlayer', ['Fixtures', SongPlayer]);
  })();
