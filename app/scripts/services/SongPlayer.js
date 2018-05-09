@@ -2,7 +2,7 @@
   function SongPlayer() {
     var SongPlayer = {};
 
-    var currentSong = null;
+    SongPlayer.currentSong = null;
     var currentBuzzObject = null;
 
 /*
@@ -13,7 +13,7 @@
     var setSong = function(song) {
       if (currentBuzzObject) {
         currentBuzzObject.stop();
-        currentSong.playing = null;
+        SongPlayer.currentSong.playing = null;
       }
 
 /*
@@ -25,7 +25,7 @@
         preload: true
       });
 
-      currentSong = song;
+      SongPlayer.currentSong = song;
     };
 
 
@@ -62,9 +62,9 @@
   @function SongPlayer.play(song)
   @desc plays a song from the beginning if the song has not already started and continues playing the song from where it left off if not
   @params {Object} song
-  */
+*/
     SongPlayer.play = function(song) {
-      song = song || SongPlayer.currentSong;
+     song = song || SongPlayer.currentSong;
       if (SongPlayer.currentSong !== song) {
         setSong(song);
         playSong(song);
@@ -82,6 +82,7 @@
   @params {Object} song
 */
     SongPlayer.pause = function(song) {
+     song = song || SongPlayer.currentSong;
       currentBuzzObject.pause();
       song.playing = false;
     };
