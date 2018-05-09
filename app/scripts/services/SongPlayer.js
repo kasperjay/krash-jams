@@ -40,10 +40,9 @@
       SongPlayer.currentSong = song;
     };
 
-<<<<<<< HEAD
+
     SongPlayer.play = function(song) {
       if (currentSong !== song) {
-=======
 
 /*
   @function playSong
@@ -82,7 +81,6 @@
     SongPlayer.play = function(song) {
      song = song || SongPlayer.currentSong;
       if (SongPlayer.currentSong !== song) {
->>>>>>> asgnmt-8-svcs3
         setSong(song);
         currentBuzzObject.play();
         song.playing = true;
