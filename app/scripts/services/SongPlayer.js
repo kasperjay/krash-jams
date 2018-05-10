@@ -2,36 +2,32 @@
   function SongPlayer(Fixtures) {
     var SongPlayer = {};
 
+    SongPlayer.currentSong = null;
+    var currentBuzzObject = null;
 
-//  @desc stores album information to be accessed by the SongPlayer service
+
+  // stores album information to be accessed by the SongPlayer service
     var currentAlbum = Fixtures.getAlbum();
 
-/*
-  @function getSongIndex
-  @desc returns index of song from currentAlbum
-  @param {Object} song
-*/
+
+    /* @function getSongIndex
+      @desc returns index of song from currentAlbum
+      @param {Object} song */
     var getSongIndex = function(song) {
     return currentAlbum.songs.indexOf(song);
 };
 
-    SongPlayer.currentSong = null;
-    var currentBuzzObject = null;
-
-/*
-* @function setSong
-* @desc Stops currently playing song and loads new audio file as currentBuzzObject
-* @param {Object} song
-*/
+    /* @function setSong
+       @desc Stops currently playing song and loads new audio file as currentBuzzObject
+       @param {Object} song */
     var setSong = function(song) {
       if (currentBuzzObject) {
         stopSong();
       }
 
-/*
-* @desc Buzz object audio file
-* @type {Object}
-*/
+
+      /* @desc Buzz object audio file
+         @type {Object} */
       currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
         preload: true
@@ -40,40 +36,32 @@
       SongPlayer.currentSong = song;
     };
 
-/*
-  @function playSong
-  @desc plays song and sets song.playing to true so album.html changes play/pause icon
-  @param {Object} song
-*/
+    /* @function playSong
+       @desc plays song and sets song.playing to true so album.html changes play/pause icon
+       @param {Object} song */
     var playSong = function(song) {
       currentBuzzObject.play();
       song.playing = true;
     }
 
-/*
-  @function pauseSong
-  @desc pauses song at its current point
-  @param {Object} song
-*/
+    /* @function pauseSong
+       @desc pauses song at its current point
+       @param {Object} song */
     var pauseSong = function(song) {
       currentBuzzObject.pause();
       song.playing = false;
     }
 
-/*
-  @function stopSong
-  @desc stops and clears the currently playing song
-*/
+    /* @function stopSong
+       @desc stops and clears the currently playing song */
     var stopSong = function() {
       currentBuzzObject.stop();
       SongPlayer.currentSong.playing = null;
     }
 
-/*
-  @function SongPlayer.play(song)
-  @desc starts song from the beginning, or resumes playback from where the song was paused
-  @params {Object} song
-*/
+    /* @function SongPlayer.play(song)
+       @desc resume playback of a paused song or otherwise start playback from the beginning. sets song.playing to true
+       @params {Object} song */
     SongPlayer.play = function(song) {
      song = song || SongPlayer.currentSong;
       if (SongPlayer.currentSong !== song) {
@@ -87,16 +75,17 @@
       }
     };
 
+    /* @function SongPlayer.pause(song)
+       @desc pauses playback at the current time elapsed. sets song.playing to false
+       @param song */
     SongPlayer.pause = function(song) {
      song = song || SongPlayer.currentSong;
       currentBuzzObject.pause();
       song.playing = false;
     };
 
-/*
-  @function Songplayer.previous
-  @desc skips the track to the previous song in the album. if pressed while playing the first song (i.e. there is no previous track) the song stops playing.
-*/
+    /* @function Songplayer.previous
+       @desc starts playback of the previous song on album. if current song is the first on the album, pressing previous stops playback */
     SongPlayer.previous = function() {
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
       currentSongIndex--;
@@ -110,10 +99,8 @@
       }
     };
 
-/*
-  @function SongPlayer.next
-  @desc skips the track to the next song on the album. if there isn't a next song, the playing stops.
-*/
+    /* @function SongPlayer.next
+       @desc skip to the next song on the album. if current song is the last on the album, pressing next stops playback. */
     SongPlayer.next = function() {
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
       currentSongIndex++;
@@ -126,8 +113,6 @@
         playSong(song);
       }
     };
-
-
 
     return SongPlayer;
   }
