@@ -40,10 +40,6 @@
       SongPlayer.currentSong = song;
     };
 
-
-    SongPlayer.play = function(song) {
-      if (currentSong !== song) {
-
 /*
   @function playSong
   @desc plays song and sets song.playing to true so album.html changes play/pause icon
@@ -75,7 +71,7 @@
 
 /*
   @function SongPlayer.play(song)
-  @desc plays a song from the beginning if the song has not already started and continues playing the song from where it left off if not
+  @desc starts song from the beginning, or resumes playback from where the song was paused
   @params {Object} song
 */
     SongPlayer.play = function(song) {
@@ -84,7 +80,7 @@
         setSong(song);
         currentBuzzObject.play();
         song.playing = true;
-      } else if (currentSong === song) {
+      } else if (SongPlayer.currentSong === song) {
         if (currentBuzzObject.isPaused()) {
           currentBuzzObject.play();
         }
@@ -106,7 +102,7 @@
       currentSongIndex--;
 
       if (currentSongIndex < 0) {
-        stopSong
+        stopSong();
       } else {
         var song = currentAlbum.songs[currentSongIndex];
         setSong(song);
@@ -122,8 +118,8 @@
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
       currentSongIndex++;
 
-      if (currentSongIndex < currentAlbum.length) {
-        stopSong(SongPlayer.currentson);
+      if (currentSongIndex > Object.keys(currentAlbum).length) {
+        stopSong();
       } else {
         var song = currentAlbum.songs[currentSongIndex];
         setSong(song);
@@ -135,8 +131,8 @@
 
     return SongPlayer;
   }
-  })();
 
      angular
          .module('blocJams')
          .factory('SongPlayer', ['Fixtures', SongPlayer]);
+ })();
