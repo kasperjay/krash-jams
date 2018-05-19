@@ -14,13 +14,21 @@
       replace: true,
       restrict: 'E',
       scope: {
-        onChange: '&'
+          onChange: '&'
       },
       link: function(scope, element, attributes) {
         scope.value = 0;
         scope.max = 100;
 
         var seekBar = $(element);
+
+        attributes.$observe('value', function(newValue) {
+          scope.value = newValue;
+        });
+
+        attributes.$observe('max', function(newValue) {
+          scope.max = newValue;
+        });
 
         attributes.$observe('value', function(newValue) {
           scope.value = newValue;
@@ -59,6 +67,12 @@
               notifyOnChange(scope.value);
             });
           });
+
+          var notifyOnChange = function(newValue) {
+            if (typeof scope.onChange === 'function') {
+              scope.onChange({value: newValue});
+            }
+          };
 
           $document.bind('mouseup.thumb', function() {
             $document.unbind('mousemove.thumb');
