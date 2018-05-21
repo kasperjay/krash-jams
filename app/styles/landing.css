@@ -44,6 +44,8 @@ body.landing {
     -webkit-transition-delay: 0.2s;
     -moz-transition-delay: 0.2s;
     transition-delay: 0.2s;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 25px;
 }
 
 .point .point-title {

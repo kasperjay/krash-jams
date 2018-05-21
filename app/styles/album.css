@@ -1,38 +1,37 @@
 body.album {
-    background-image: url(../assets/images/blurred_backgrounds/blur_bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
     padding-bottom: 200px;
 }
 
 .album-cover-art {
     position: relative;
     left: 20%;
-    margin-top: 1rem;
+    margin: 1rem auto;
     width: 60%;
 }
 
 .album-view-details {
-    position: relative;
-    top: 1.5rem;
-    padding: 1rem;
-}
+    position: relative;    width: 50%;
+    color: #10B0C4;
+    text-align: center;
+    margin-top: 70px;
+    margin-right: 40px;
+    }
 
 .album-view-details .album-view-title {
-    font-weight: 300;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 4rem;
 }
 
 .album-view-details .album-view-artist {
-    font-weight: 300;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 .album-view-details .album-view-release-info {
-    font-weight: 300;
-    font-size: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    color: #6022AB;
 }
 
 .album-view-song-list {
@@ -40,7 +39,7 @@ body.album {
     margin: 1.5rem auto;
     font-weight: 500;
     font-size: 0.75em;
-    background-color: rgba(255, 255, 255, 0.17);
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 20px;
 }
 
@@ -57,7 +56,7 @@ body.album {
 .song-item-number {
     width: 5%;
     min-width: 30px;
-    text-align: center
+    text-align: center;
   }
 
 .song-item-title {
@@ -83,7 +82,7 @@ body.album {
 .album-song-button:hover {
     cursor: pointer;
     color: white;
-    color: rgb(210, 40, 123);
+    color: #10ACC1;
 }
 
 .album-song-button span {
@@ -99,7 +98,7 @@ body.album {
         text-align: center;
     }
 
-    .album-view-title {
+.album-view-title {
         margin-top: 0;
     }
 }

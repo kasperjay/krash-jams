@@ -23,14 +23,15 @@ body {
 .navbar {
     position: relative;
     padding: 0.5rem;
-    background-color: rgba(101,18,95,0.5);
+    background: rgba(96, 34, 171, .4);
     z-index: 1;
 }
 
-.navbar .logo {
-    position: relative;
+.navbar img {
     left: 2rem;
     cursor: pointer;
+    height: 7.5%;
+    width: 7.5%;
 }
 
 .navbar .links-container {
@@ -39,7 +40,6 @@ body {
     top: 0;
     right: 0;
     height: 100px;
-    color: white;
     text-decoration: none;
 }
 
@@ -50,7 +50,7 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     vertical-align: middle;
-    color: white;
+    color: #10B0C4;
     font-size: 0.625rem;
     letter-spacing: 0.05rem;
     font-weight: 700;
@@ -60,11 +60,12 @@ body {
 }
 
 .links-container .navbar-link:hover {
-    color: rgb(233,50,117);
+    color: #BB03C2;
+    text-decoration: underline;
 }
 
 .links-container .navbar-link:active {
-    background-color: white;
+    background-color: #10ACC1;
 }
 
 .container {
@@ -82,15 +83,13 @@ body {
 
     .column {
         float: left;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 
     .column.full { width: 100%; }
     .column.two-thirds { width: 66.7%; }
-    .column.half { width: 50%; }
+    .column.half { width: 48%; }
     .column.third { width: 33.3%; }
-    .column.fourth { width: 25%; }
+    .column.fourth { width: 23%; }
     .column.flow-opposite { float: right; }
 }
 
