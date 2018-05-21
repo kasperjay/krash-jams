@@ -1,5 +1,5 @@
 body.album {
-    background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+    background-image: url(../assets/images/blurred_backgrounds/blur_bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -38,19 +38,27 @@ body.album {
 .album-view-song-list {
     width: 90%;
     margin: 1.5rem auto;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 0.75em;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 20px;
 }
 
 .album-view-song-item {
     height: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid #9F05AF;
 }
+
+.album-view-song-item:last-child {
+  border-bottom: none;
+}
+
 
 .song-item-number {
     width: 5%;
     min-width: 30px;
-}
+    text-align: center
+  }
 
 .song-item-title {
     width: 85%;
