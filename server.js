@@ -3,7 +3,7 @@ const Inert = require('inert');
 const Path = require('path');
 
 let connection = {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 4000,
     host: process.env.IP || 'localhost'
 };
 

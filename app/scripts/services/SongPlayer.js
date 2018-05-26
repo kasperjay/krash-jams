@@ -145,7 +145,19 @@
             if (currentBuzzObject) {
                 currentBuzzObject.setVolume(volume);
             }
-        }
+          SongPlayer.volume = volume;
+        };
+
+    SongPlayer.toggleMute = function () {
+    	 if (SongPlayer.volume === 0) {
+    			SongPlayer.muted = false;
+    			SongPlayer.setVolume(SongPlayer.prevVolume);
+    	 } else {
+    			SongPlayer.prevVolume = SongPlayer.volume;
+    			SongPlayer.muted = true;
+    			SongPlayer.setVolume(0);
+    		}
+    }
 
     return SongPlayer;
   }

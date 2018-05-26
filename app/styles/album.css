@@ -10,7 +10,8 @@ body.album {
 }
 
 .album-view-details {
-    position: relative;    width: 50%;
+    position: relative;
+    width: 50%;
     color: #10B0C4;
     text-align: center;
     margin-top: 70px;
@@ -18,20 +19,20 @@ body.album {
     }
 
 .album-view-details .album-view-title {
-    font-weight: 600;
     font-size: 4rem;
+    font-family: 'Knewave', cursive;
 }
 
 .album-view-details .album-view-artist {
-    font-weight: 600;
     font-size: 2rem;
+    font-family: 'Knewave', cursive;
 }
 
 .album-view-details .album-view-release-info {
-    font-weight: 600;
     font-size: 1rem;
     text-align: center;
     color: #6022AB;
+    font-family: 'Raleway', sans-serif;
 }
 
 .album-view-song-list {
@@ -41,6 +42,7 @@ body.album {
     font-size: 0.75em;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 20px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .album-view-song-item {
@@ -70,28 +72,25 @@ body.album {
 .album-song-button {
     text-align: center;
     font-size: 14px;
-    background-color: white;
-    color: rgb(210, 40, 123);
     border-radius: 50% 50%;
     display: inline-block;
     width: 28px;
     height: 28px;
-    color: rgb(210, 40, 123);
+    background-color: white;
+    color: #40169E;
 }
 
 .album-song-button:hover {
     cursor: pointer;
     color: white;
-    color: #10ACC1;
+    background-color: #10ACC1;
 }
 
 .album-song-button span {
     line-height: 28px;
 }
 
-.album-song-button .fa-play {
-    padding-left: 5px;
-}
+
 
 @media (max-width: 40rem) and (min-width: 20rem) {
     .album-view-details {

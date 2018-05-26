@@ -49,6 +49,12 @@
     font-size: 1.6rem;
 }
 
+.player-bar .main-controls .play-pause:hover {
+  color: #10B0C4;
+  text-shadow: 2px 4px 3px ##40169E;
+
+}
+
 /* === CURRENTLY PLAYING === */
 
 .player-bar .currently-playing {
@@ -149,6 +155,10 @@
     font-size: 1.1rem;
     display: inline-block;
     vertical-align: middle;
+}
+
+.player-bar .volume .icon:hover {
+  cursor: pointer;
 }
 
 .player-bar .volume .seek-bar {
