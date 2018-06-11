@@ -68,10 +68,6 @@
 
     SongPlayer.currentSong = null;
 
-    /*
-    @desc Current playback time (in seconds) of currently playing song
-     @type {Number} */
-    SongPlayer.currentTime = null;
 
     /* @desc Current song volume with a value between 0 and 100
       @type {Number} */
@@ -137,16 +133,16 @@
       @param {Number} time */
     SongPlayer.setCurrentTime = function(time) {
       if (currentBuzzObject) {
-        currentBuzzObject.setTime(time);
+        currentBuzzObject.setTime(time)
       }
     };
 
     SongPlayer.setVolume = function(volume) {
-            if (currentBuzzObject) {
-                currentBuzzObject.setVolume(volume);
-            }
+        if (currentBuzzObject) {
+          currentBuzzObject.setVolume(volume);
+        }
           SongPlayer.volume = volume;
-        };
+      };
 
     SongPlayer.toggleMute = function () {
     	 if (SongPlayer.volume === 0) {
