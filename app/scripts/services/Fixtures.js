@@ -9,13 +9,13 @@
              year: '2015',
              albumArtUrl: '/assets/images/album_covers/001.png',
              songs: [
-                 { title: 'Whatcha Think About That', duration: '3:33', audioUrl: '/assets/music/whatcha-think' },
-                 { title: 'Underage', duration: '3:25', audioUrl: '/assets/music/underage' },
-                 { title: 'Slide', duration: '3:19', audioUrl: '/assets/music/slide' },
-                 { title: 'F\'d Up Girl Across the Street', duration: '3:10', audioUrl: '/assets/music/fd-up-girl' },
-                 { title: 'Red Handed', duration: '4:23', audioUrl: '/assets/music/red-handed' },
-                 { title: 'Just Distance', duration: '2:53', audioUrl: '/assets/music/just-distance' },
-                 { title: 'Come As You Are', duration: '2:24', audioUrl: '/assets/music/come' },
+                 { title: 'Whatcha Think About That', duration: '213.37', audioUrl: '/assets/music/whatcha-think' },
+                 { title: 'Underage', duration: '205.25', audioUrl: '/assets/music/underage' },
+                 { title: 'Slide', duration: '199.55', audioUrl: '/assets/music/slide' },
+                 { title: 'F\'d Up Girl Across the Street', duration: '190.64', audioUrl: '/assets/music/fd-up-girl' },
+                 { title: 'Red Handed', duration: '263.26', audioUrl: '/assets/music/red-handed' },
+                 { title: 'Just Distance', duration: '173.57', audioUrl: '/assets/music/just-distance' },
+                 { title: 'Come As You Are', duration: '144.58', audioUrl: '/assets/music/come' },
              ]
          };
 
